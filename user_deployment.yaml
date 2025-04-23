@@ -21,7 +21,7 @@ spec:
           - name: DB_HOST
             value: userdb.cxkwc0qo62hy.ap-south-1.rds.amazonaws.com
           - name: DB_NAME
-            value: userdb
+            value: ecomuserms
           - name: DB_USERNAME
             value: root
           - name: DB_PASSWORD
