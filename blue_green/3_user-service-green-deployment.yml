@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+      version: green
+  template:
+    metadata:
+      labels:
+        app: user-service
+        version: green
+    spec:
+      containers:
+        - name: user-service
+          image: javaexpress/user-service:5.2.security  # new version image
+          ports:
+            - containerPort: 8085
+          env:
+            - name: DB_HOST
+              value: userdb.cxkwc0qo62hy.ap-south-1.rds.amazonaws.com
+            - name: DB_NAME
+              value: ecomuserms
+            - name: DB_USERNAME
+              value: root
+            - name: DB_PASSWORD
+              value: javaexpress1122
+            - name: DB_PORT
+              value: "3306"
+            - name: SPRING_APPLICATION_NAME
+              value: user-service
+            - name: SPRING_PROFILES_ACTIVE
+              value: cloud
+            - name: EUREKA_SERVER
+              value: eureka-service
+            - name: ZIPKIN_SERVER
+              value: zipkin-service
