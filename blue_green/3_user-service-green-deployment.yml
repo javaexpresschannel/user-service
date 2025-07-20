@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: javaexpress/user-service:5.2.security  # new version image
+          image: javaexpress/user-service:5.2.security  # new version image 
           ports:
             - containerPort: 8085
           env:
