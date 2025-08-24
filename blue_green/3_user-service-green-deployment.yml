@@ -36,5 +36,3 @@ spec:
               value: cloud
             - name: EUREKA_SERVER
               value: eureka-service
-            - name: ZIPKIN_SERVER
-              value: zipkin-service
